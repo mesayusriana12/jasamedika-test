@@ -109,6 +109,43 @@ class MenuSeeder extends Seeder
             ])->get(['id'])
         );
 
+        //=================== Seeder start here ===================
+
+        $subdistrict = Menu::create([
+            'name' => 'subdistrict',
+            'route_or_url' => 'subdistrict.index',
+            'icon' => 'house-flag',
+            'position' => 3,
+            'deleteable' => true,
+            'actives' => [
+                'subdistrict.*',
+            ],
+        ]);
+
+        $subdistrict->permissions()->attach(
+            Permission::whereIn('name', [
+                'create subdistrict', 'read subdistrict', 'update subdistrict', 'delete subdistrict',
+            ])->get(['id'])
+        );
+
+        $patient = Menu::create([
+            'name' => 'patient',
+            'route_or_url' => 'patient.index',
+            'icon' => 'hospital-user',
+            'position' => 4,
+            'deleteable' => true,
+            'actives' => [
+                'patient.*',
+            ],
+        ]);
+
+        $patient->permissions()->attach(
+            Permission::whereIn('name', [
+                'create patient', 'read patient', 'update patient', 'delete patient',
+            ])->get(['id'])
+        );
+
+        /*
         $translation = $builtin->childs()->create([
             'name' => 'translation',
             'route_or_url' => 'superuser.translation.index',
@@ -155,5 +192,6 @@ class MenuSeeder extends Seeder
                 'read login activities',
             ])->get(['id'])
         );
+        */
     }
 }
