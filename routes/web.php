@@ -64,6 +64,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::resource('subdistrict', App\Http\Controllers\SubdistrictController::class)->except([
         'create', 'edit'
     ]);
+    Route::resource('patient', App\Http\Controllers\PatientController::class)->except([
+        'create', 'edit'
+    ]);
 
     Route::post('/subdistict/paginate', [App\Http\Controllers\SubdistrictController::class, 'paginate'])->name('subdistrict.paginate');
+    Route::post('/patient/paginate', [App\Http\Controllers\PatientController::class, 'paginate'])->name('patient.paginate');
 });
