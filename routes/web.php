@@ -60,4 +60,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::post('/activity/login', [App\Http\Controllers\ActivityController::class, 'logins'])->name('activity.login');
         Route::get('/menu/get', [App\Http\Controllers\Superuser\MenuController::class, 'get'])->name('menu');
     });
+
+    Route::resource('subdistrict', App\Http\Controllers\SubdistrictController::class)->except([
+        'create', 'edit'
+    ]);
+
+    Route::post('/subdistict/paginate', [App\Http\Controllers\SubdistrictController::class, 'paginate'])->name('subdistrict.paginate');
 });
