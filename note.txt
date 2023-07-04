@@ -1,0 +1,7 @@
+Framework, tools dan library yang digunakan
+
+1. Laravel 9
+2. Inertia JS
+3. Vue 3
+4. Tailwind CSS
+5. Laravel Permission
