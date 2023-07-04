@@ -112,7 +112,7 @@ class MenuSeeder extends Seeder
         //=================== Seeder start here ===================
 
         $subdistrict = Menu::create([
-            'name' => 'subdistrict',
+            'name' => 'kelurahan',
             'route_or_url' => 'subdistrict.index',
             'icon' => 'house-flag',
             'position' => 3,
@@ -129,7 +129,7 @@ class MenuSeeder extends Seeder
         );
 
         $patient = Menu::create([
-            'name' => 'patient',
+            'name' => 'pasien',
             'route_or_url' => 'patient.index',
             'icon' => 'hospital-user',
             'position' => 4,

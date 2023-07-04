@@ -143,6 +143,15 @@ onUnmounted(() => window.removeEventListener('keydown', esc))
                   name="name"
                   class="border px-3 py-2 text-center whitespace-nowrap"
                 >
+                  ID
+                </Th>
+
+                <Th
+                  :table="table"
+                  :sort="true"
+                  name="id"
+                  class="border px-3 py-2 text-center whitespace-nowrap"
+                >
                   Nama
                 </Th>
 
@@ -227,6 +236,15 @@ onUnmounted(() => window.removeEventListener('keydown', esc))
                   class="border px-3 py-2 text-center"
                 >
                   {{ __('no') }}
+                </Th>
+
+                <Th
+                  :table="table"
+                  :sort="false"
+                  name="name"
+                  class="border px-3 py-2 text-center whitespace-nowrap"
+                >
+                  ID
                 </Th>
 
                 <Th
@@ -337,6 +355,10 @@ onUnmounted(() => window.removeEventListener('keydown', esc))
                   >
                     <td class="px-2 py-1 border dark:border-gray-800 text-center">
                       {{ i + 1 }}
+                    </td>
+
+                    <td class="px-2 py-1 border dark:border-gray-800 capitalize">
+                      {{ patient.id }}
                     </td>
 
                     <td class="px-2 py-1 border dark:border-gray-800 capitalize">
